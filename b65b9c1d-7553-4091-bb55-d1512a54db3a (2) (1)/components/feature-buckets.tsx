@@ -11,7 +11,7 @@ interface Feature {
 
 export function FeatureBuckets() {
   const [isVisible, setIsVisible] = useState(false)
-  const [activeTab, setActiveTab] = useState<'productivity' | 'auditing' | 'governance'>('productivity')
+  const [activeTab, setActiveTab] = useState<'productivity' | 'smart archive' | 'governance'>('productivity')
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -84,10 +84,10 @@ export function FeatureBuckets() {
         }
       ]
     },
-    auditing: {
+    Smart Archive: {
       icon: Search,
       color: 'black',
-      title: '2. Auditing',
+      title: '2. Smart Archive',
       tagline: 'Reconstruct State & Preserve Integrity',
       features: [
         {
@@ -207,7 +207,7 @@ export function FeatureBuckets() {
 
           {/* Tab Navigation */}
           <div className="flex flex-wrap gap-4 mb-16 border-b border-black pb-4">
-            {(['productivity', 'auditing', 'governance'] as const).map((bucket) => (
+            {(['productivity', 'Smart Archive', 'governance'] as const).map((bucket) => (
               <button
                 key={bucket}
                 onClick={() => setActiveTab(bucket)}
